@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+    ubuntu_python:
+        image: python:slim
+        container_name: ubuntu_python
+        hostname: ubuntu_python
+        volumes:
+            - ./src:/app/src
+            - ./data:/app/data
+        command: "tail -F anything"
