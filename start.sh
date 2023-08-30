@@ -30,6 +30,7 @@ echo 'Enter the number to choose Image'
 read image_index
 
 cp virtual_env/${os_list[$os_index]}/${image_list[$image_index]} docker-compose.yml
+docker network create -d bridge nginx_unicco
 docker-compose build --no-cache
 docker-compose up -d
 rm docker-compose.yml

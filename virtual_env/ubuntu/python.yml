@@ -9,3 +9,9 @@ services:
             - ./src:/app/src
             - ./data:/app/data
         command: "tail -F anything"
+        networks:
+            - nginx_unicco
+
+networks:
+    nginx_unicco:
+        external: true

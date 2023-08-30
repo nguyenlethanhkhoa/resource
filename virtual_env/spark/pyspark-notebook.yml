@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+    spark:
+        image: jupyter/all-spark-notebook
+        container_name: spark_notebook
+        ports:
+            - 8888:8888
+        volumes:
+          - ./src:/app/src
+          - ./data:/app/data
+        environment:
+            JUPYTER_TOKEN: easy
+            PASSWORD: password
+        networks:
+            - nginx_unicco
+
+networks:
+    nginx_unicco:
+        external: true
+
